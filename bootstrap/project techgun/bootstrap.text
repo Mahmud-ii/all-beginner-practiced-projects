@@ -1,0 +1,21 @@
+01, columns are max 12 in 12 div 
+02, columns should be under row
+03, x-small 0px-575px col-* col-12
+small 575px-767px col-sm-*
+medium 767px-991px  col-md-* col-md-7
+large 992px-1199px col-lg-*
+extra large 1200px-1399px col-xl-*
+extra extra large 1400px-infinte col-xxl-*
+04, content should be in column, for width
+05, container-fluid takes 100% width
+06, cdn load faster, downloaded file load slower
+07, container breakpoints for widht, s-xl-lg-xxl
+08, bootstrap flow, container > row > column > content(text and images)
+09, 
+    <div class="container-xl" id="red">
+        <div class="row" id="green">
+            <div class="col-lg-4 col-xl-5 col-md-6 col-sm-8 col-6">column 1</div>
+            <div class="col-lg-6 col-xl-5 col-md-3 col-sm-4 col-6">column 2</div>
+            <div class="col-lg-2 col-md-3 col-sm-6">column 3</div>
+        </div>
+    </div>

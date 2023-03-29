@@ -1,0 +1,1 @@
+change the textshadow according to mousemove on clientX & clientY;

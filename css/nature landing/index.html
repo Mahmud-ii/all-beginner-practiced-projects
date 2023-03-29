@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Nature's Creativeness</title>
+</head>
+<body>
+        <section>
+            <header>
+                <div class="logo">
+                    <span>LOGO</span>
+                </div>
+                <nav>
+                    <div class="nav-toggle">
+                        <i class="fa-solid fa-bars"></i>
+                        <!-- <i class="fa-solid fa-xmark"></i> -->
+                    </div>
+                    <ul class="nav-container">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Info</a></li>
+                        <li><a href="#">Service</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+    
+            <div class="content-box">
+                <h1 class="highlighted-text">LIKE NATURE <br><span>BE CREATIVE!</span></h1>
+                <p class="para">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis iste quibusdam asperiores, rerum, autem ullam praesentium quo modi molestias, eveniet libero laudantium fuga consequatur Ex cupiditate, dolore libero sit repellat, illum unde dolores sequi at quae adipisci ipsum dolorum architecto incidunt, error sed enim officia? Molestiae, ea quod quis vero eveniet dolor eius illo exercitationem recusandae.
+                </p>
+                <button class="btn btn-info"><a href="#">MORE INFO</a></button>
+            </div>
+    
+            <div class="social">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>    
+        </section>
+    <script>
+        const toggleBtn = document.querySelector('.nav-toggle')
+
+        toggleBtn.addEventListener('click', () => {
+            document.querySelector('.nav-container').classList.toggle('nav-container-two')
+
+            if(toggleBtn.children[0].classList.contains('fa-bars')){
+                toggleBtn.innerHTML = `<i class="fa-solid fa-xmark"></i>`
+            }else{
+                toggleBtn.innerHTML = `<i class="fa-solid fa-bars"></i>`
+            }
+        })
+    </script>
+</body>
+</html>

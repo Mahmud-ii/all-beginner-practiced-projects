@@ -1,0 +1,4 @@
+fetch the data,
+store the data,
+findwhatwas searched for, city or place
+displaymatched searched for;

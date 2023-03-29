@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Temperature Converter</title>
+    <style>
+        body{
+            padding: 50px 100px;
+        }
+        h1{
+            text-align: center;
+        }
+        #container{
+            text-align: center;
+            background-color: aqua;
+            padding: 50px;
+            border-radius: 5px;
+        }
+        .input-div{
+            display: inline-block;
+        }
+        .inp{
+            border-radius: 4px;
+            padding: 5px 5px;
+            margin: 10px;
+            font-size: 30px;
+            font-weight: bold;
+            width: 6em;
+        }
+        label{
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Temperature Converter</h1>
+    <div id="container">
+        <div class="input-div">
+            <label>Celsius</label>
+            <br>
+            <input type="number" value="0" id="cel" class="inp">
+        </div>
+        <div class="input-div">
+            <label>Fahrenheit</label>
+            <br>
+            <input type="number" value="32" id="fah" class="inp">
+        </div>
+    </div>
+
+
+
+
+    <script>
+        var cel = document.getElementById("cel");
+        var fah = document.getElementById("fah");
+
+        cel.addEventListener("input", function(){
+            let c = this.value;//when someone changes the value of celsius we should get it, & store it in a variable(c), Now we need to convert it in fahrenheit by formulae, 
+            let f = (c * 9/5) + 32;//we need a variable to store celsius in fahrenheit by formulae let(f);
+            //now let c will get value of celsius, and we put "c" in the formulae to convert to fahrenheit then we'll receive/store the value of fahrenheit in let f;
+            if(!Number.isInteger(f)){
+                f = f.toFixed(4);
+            }//if number is not integer/purnoshonkha then it'll return true/execute,
+            //then we've to convert(show) the var f(if not integer) after decimal to only how many digit we want;
+            fah.value = f;//we are changing the default/before value of fah to var (f) which is calculated/converted;
+        });
+        
+        fah.addEventListener("input", function(){
+            let f = this.value;
+            let c = (f - 32) * 5/9;
+            if(!Number.isInteger(c)){
+                c = c.toFixed(4);
+            }
+            cel.value = c;
+        });//rules/method same as before;
+    </script>
+</body>
+</html>

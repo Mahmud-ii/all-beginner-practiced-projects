@@ -1,0 +1,361 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+}
+.container{
+    position: relative;
+    min-height: 100vh;
+    padding: 0 4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: .2fr 1.6fr .2fr;
+    grid-template-areas: 
+    "nav nav"
+    "text img"
+    "option option";
+    align-items: center;
+}
+header{
+    grid-area: nav;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: .8rem 0;
+}
+
+.logo-img{
+    height: 50px;
+}
+
+.nav-toggle{
+    display: none;
+    cursor: pointer;
+    color: #333;
+    position: fixed;
+    top: 1.5rem;
+    right: 2rem;
+    z-index: 999;
+    padding: .8rem .5rem;
+}
+.toggle-btn,
+.toggle-btn::before,
+.toggle-btn::after{
+    display: block;
+    position: relative;
+    height: 4px;
+    width: 25px;
+    border-radius: 5px;
+    background: #333;
+}
+.toggle-btn::before,
+.toggle-btn::after{
+    content: "";
+    position: absolute;
+    bottom: 8px;
+}
+.toggle-btn::after{
+    bottom: -8px;
+}
+.nav-toggle--clicked .toggle-btn{
+    transform: rotate(45deg);
+}
+.nav-toggle--clicked .toggle-btn::before {
+    opacity: 0;
+  }
+.nav-toggle--clicked .toggle-btn::after {
+    transform: translateY(-8px) rotate(-90deg);
+}
+
+.nav-toggle:active .toggle-btn {
+    animation: rotater 250ms ease-in-out 1;
+  }
+
+@keyframes rotater {
+    0%{
+        transform: rotate(45deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.nav-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+}
+.nav-container a{
+    margin-left: 4rem;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-container a::after{
+    position: absolute;
+    content: "";
+    background: #333;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    border-radius: 10px;
+
+    transform: scale(0);
+    transition: transform 250ms ease-in-out;
+}
+
+.nav-container a:hover::after{
+    transform: scale(1);
+}
+
+.nav-container a:hover{
+    color: rgba(3, 3, 3, 0.7);
+}
+
+.text-container{
+    grid-area: text;
+    color: #333;
+    line-height: 1.3;
+}
+
+.text-container > *{
+    margin-bottom: 1rem;
+}
+
+.text-container h1{
+    font-size:  4rem;
+    font-weight: 600;
+}
+
+.highlighted-name{
+    color: #017143;
+    font-weight: 800;
+}
+
+p{
+    color: #333;
+    font-size: 1.2rem;
+}
+.btn{
+    cursor: pointer;
+    background: #017143;
+    color: white;
+    padding: .8rem 1.5rem;
+    margin: 1rem 0 1rem 0;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    -webkit-box-shadow: 1px 2px 15px 3px rgba(0,0,0,0.25);
+    -moz-box-shadow: 1px 2px 15px 3px rgba(0,0,0,0.25);
+    box-shadow: 1px 2px 15px 3px rgba(0,0,10px,0.45);
+
+    transform: scale(1);
+    transition: transform 200ms ease-in-out;
+}
+.btn:hover{
+    transform: scale(1.08);
+}
+
+.highlighted-cup{
+    grid-area: img;
+    justify-self: center;
+}
+
+.highlighted-cup img{
+    width: 300px;
+}
+
+.option-cup{
+    grid-area: option;
+    justify-self: center;
+}
+
+.option-cup img{
+    cursor: pointer;
+    height: 100px;
+    transform: translateY(0);
+    transition: transform 250ms ease-in-out;
+}
+
+.option-cup img:hover{
+    transform: translateY(-10%);
+}
+
+.social{
+    position: fixed;
+    top: 40%;
+    right: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social img{
+    margin: .5rem;
+    height: 35px;
+    transform: translateY(0%);
+    transition: transform 250ms ease-in-out;
+    filter: invert(1);
+}
+
+.social img:hover{
+    transform: translateY(-20%);
+}
+
+.circle{
+    position: absolute;
+    z-index: -11;
+    height: 100%;
+    width: 100%;
+}
+
+@supports (clip-path: circle(600px)){
+    .circle{
+        background: #017143;
+        clip-path: circle(600px at right 750px);
+    }
+}
+
+
+@media (max-width: 1130px){
+    .text-container h1{
+        font-size: 3.5rem;
+    }
+}
+@media (max-width: 990px){
+    .text-container h1{
+        font-size: 3rem;
+    }
+}
+
+
+@media (max-width: 800px) and (min-width:600px){
+    .nav-container a{
+        margin-left: 3rem;
+    }
+    .text-container h1{
+        font-size: 2.5rem;
+    }
+    p{
+        font-size: 1.1rem;
+    }
+    .option-cup img{
+        height: 80px;
+    }
+    .highlighted-cup img {
+        width: 250px;
+    }
+    .social img{
+        height: 30px;
+    }
+}
+
+@media (max-width: 600px){
+    body{
+        overflow: visible;
+        overflow-x: hidden;
+    }
+    .container{
+        padding: 0 2.5rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: .2fr 2.2fr 2.2fr .2fr;
+        grid-template-areas: 
+        "nav"
+        "text"
+        "img"
+        "option";
+    }
+    .nav-toggle{
+        display: block;
+        filter: invert(0);
+        transition: filter 250ms;
+    }
+    .nav-toggle--clicked{
+        filter: invert(1);
+    }
+    .nav-container{
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        flex-direction: column;
+        justify-content: space-evenly;
+        z-index: 99;
+        background: rgba(0,0,0,0.85);
+
+        transform: translateX(-100%);
+        transition: transform ease-in-out 250ms;
+    }
+
+    .nav-container--clicked{
+        transform: translateX(0%);
+    }
+
+    @supports (clip-path: circle(0px)){
+        .nav-container{
+            transform: translateX(0);
+            clip-path: circle(0px at top right);
+            transition: clip-path ease-in-out 250ms;
+        }
+        .nav-container--clicked{
+            clip-path: circle(550% at top right);
+        }
+    }
+    
+    .nav-container a{
+        margin: 0 ;
+        color: white;
+    }
+    .nav-container a:hover{
+        color: white;
+    }
+    .nav-container a::after{
+        background: white;
+    }
+    .text-container{
+        grid-area: text;
+    }
+    .btn{
+        padding: 0.6rem 1.3rem;
+    }
+    .highlighted-cup, .option-cup {
+        justify-self: center;
+    }
+    .option-cup img{
+        height: 80px;
+    }
+    .highlighted-cup img {
+        width: 250px;
+    }
+    .social{
+        position: fixed;
+        top: 40%;
+        right: 0;
+        z-index: 999;
+        background: #017143;
+        border-radius: 10px 0 0 10px;
+    }
+    .social img{
+        height: 20px;
+    }
+ 
+    @supports (clip-path: circle(300px)){
+        .circle{
+            clip-path: circle(300px at center bottom);
+        }
+    }
+}

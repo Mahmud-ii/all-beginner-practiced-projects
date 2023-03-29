@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter</title>
+    <style>
+        body{
+            padding: 0px 100px;
+        }
+        h1{
+            text-align: center;
+            background-color: aquamarine;
+            color: magenta;
+            padding: 10px;
+            margin: 0px;
+            border-radius: 5px;
+        }
+        #textbox{
+            width: 99%;
+            border-color: aquamarine;
+            font-size: 15px;
+        }
+        p{
+            text-align: center;
+            background-color: aquamarine;
+            font-size: 25px;
+            font-weight: bold;
+            color: magenta;
+            padding: 10px;
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Word and character counter</h1>
+    <textarea id="textbox" cols="30" rows="10"></textarea>
+    <p>
+       <span id="word">0</span> Word and 
+       <span id="char">0</span> characters
+    </p>
+
+    <script>
+        let textbox = document.getElementById("textbox");
+
+        textbox.addEventListener("input", function(){
+            var text = this.value;//when user writing something it need to be fetched in a variable, var text = this.value; //'this' is textarea, 'value' is value passed in textarea,
+
+            let char = text.length;//string is a array of characters, //text.length, to know text's length, space will be counted as char too;
+
+            document.getElementById("char").innerHTML = char;//don't need to create a variable, changing innerHTML of span #char by variable char which is text length,
+
+            text = text.trim();//trim will remove extra spaces from starting and ending, & word won't be counted their, but space in the middle will count word; 
+
+            let words = text.split(" "); //spliting text by text.split(" "); " " space count a word, //detect and count word by space, the it'll will store words in a array,
+
+            let cleanList = words.filter(function(elm){
+                return elm != "";
+            });//words.filter(anonymous function(parameter)), it will return each element from word one by one to the function //parameter is a variable, can be given any name, then return an elm which is not blank;
+            document.getElementById("word").innerHTML = cleanList.length;//will only return filter(cleanList) text;
+        }) 
+    </script>
+</body>
+</html>

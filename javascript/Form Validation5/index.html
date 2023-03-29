@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        body{
+            background-color: rgb(28, 201, 201);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        #form-container{
+            background-color: white;
+            padding: 50px;
+            text-align: center;
+        }
+        h2{
+            margin: 0px 0px 10px 0;
+        }
+        input{
+            width: 200px;
+            margin: 10px 0px;
+            padding: 10px;
+        }
+        input[type="submit"]{
+            width: 222px;
+            background-color: rgb(0, 255, 170);
+            border: 0px;
+            border-radius: 2px;
+            color: white;
+        }
+        .error{
+            color: red;
+            margin: 0;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="form-container" >
+        <h2>Login</h2>
+        <form action="" onsubmit="return validateForm()">
+            <input type="text" placeholder="User name" id="username"> <br>
+            <p id="userError" class="error"></p>
+            <input type="password" placeholder="Password" id="password"> <br>
+            <p id="passError" class="error"></p>
+            <input type="submit">
+
+        </form>
+    </div>
+
+    <script>
+        let username = document.getElementById("username");//getting
+        let password = document.getElementById("password");//getting
+        let flag = 1;
+
+        function validateForm(){
+            if(username.value == ""){
+                document.getElementById("userError").innerHTML = "User Name is Empty";
+                flag = 0;
+            }//if value/textarea is blank/nothing passed/empty is false; wont submit
+            else if(username.value.length < 3){
+                document.getElementById("userError").innerHTML = "User Name is require min 3 char";
+                flag = 0;
+            }//less than 3 character of username text length will be false; wont submit
+            else{
+                document.getElementById("userError").innerHTML = "";
+                flag = 1;
+            }//otherwise this works means true,means not blank & not less than 3 character; form will submit; will blank/wont show usererror;
+
+
+            if(password.value == ""){
+                document.getElementById("passError").innerHTML = "Password is empty";
+                flag = 0;
+            }////if value/textarea is blank/nothing passed/empty is false; wont submit
+            else{
+                document.getElementById("passError").innerHTML = "";
+                flag = 1;
+            }//otherwise this works means true,means not blank; form will submit; will blank/wont show passerror;
+
+
+            if(flag ){
+                return true;
+            }//only flag means 1, means true, form will submit 
+            else{
+                return false;
+            }//if flag is 0, means false, form wont submit
+        }
+    </script>    
+</body>
+</html>
+

@@ -1,0 +1,6 @@
+*localstorage,
+*eventdelegation;
+
+*when we add an item,
+* put it into localstorage, and 
+*when everytime page loads we shows them if something saved on localstorage;

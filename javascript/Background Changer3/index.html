@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Changer</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 20px 100px;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+        }
+        img{
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 5px;
+        }
+        p{
+            font-size: 18px;
+            text-align: justify;
+        }
+        .btn{
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            border: solid grey 2px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        #white{
+            background-color: white;
+        }
+        #aqua{
+            background-color: aquamarine;
+        }
+        #violet{
+            background-color: violet;
+        }
+        #black{
+            background-color: black;
+        }
+        #color-switcher{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div id="color-switcher">
+        <span class="btn" id="white" onclick="changeBG('#ffffff')"></span>
+        <span class="btn" id="aqua" onclick="changeBG('aqua')"></span>
+        <span class="btn" id="violet" onclick="changeBG('violet')"></span>
+        <span class="btn" id="black" onclick="changeBG('#000000')"></span>
+    </div>
+    <h1 class="text">About Us</h1>
+    <img src="https://wallpapercave.com/wp/wp9490717.jpg" alt="">
+    <p class="text">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed harum ipsa debitis quia vel reprehenderit laboriosam veniam praesentium? Eum quod eveniet, porro unde, delectus reiciendis architecto neque cumque voluptatem voluptatibus cupiditate perspiciatis incidunt! Dolorem, sit deleniti? Repellat, officia est soluta atque porro asperiores ducimus fugiat, fuga, doloribus ipsam explicabo eveniet error libero laudantium. Beatae soluta distinctio aliquam exercitationem similique ullam dolorem inventore sapiente esse laboriosam id commodi molestiae, quam nesciunt repellendus. Odit aspernatur, vel repellendus omnis accusantium numquam fugit optio nesciunt consequatur fuga eum ut eveniet! Porro ex, ipsam, veniam aliquam explicabo a eaque blanditiis voluptatum sit ipsa placeat quibusdam perspiciatis consequuntur quidem. Debitis fuga at, dolor rem explicabo, nemo mollitia atque saepe tempora tenetur cumque nostrum unde maiores hic fugiat est labore quos nisi itaque. Neque vitae adipisci provident libero veritatis ut sed, magnam dolor dolorem est, deleniti iste ipsam voluptatum error nostrum quidem corrupti, omnis aut eligendi odio officiis odit facilis. Est, perferendis quod! Perferendis maiores qui, suscipit, commodi illo at obcaecati adipisci consequatur pariatur omnis enim, delectus tempore! Non rem adipisci in quas, ex at temporibus sint aperiam eaque harum cupiditate quia delectus accusantium, dignissimos impedit? Dicta dolor sint earum rem error esse itaque eum vel deserunt quae doloribus, repudiandae quo a adipisci quos reiciendis ex temporibus corrupti nam! Asperiores, enim quo est unde aperiam molestiae doloremque ratione. Id alias inventore nisi possimus adipisci tempore quod. Temporibus minus, laudantium, quas tempore atque eius explicabo dolore consequuntur eligendi est ipsum quae ex aperiam neque esse commodi, et doloremque debitis consequatur dolor velit quod voluptas nemo suscipit. Necessitatibus itaque quas maiores, non neque voluptate explicabo a quibusdam laborum recusandae, quos velit! Nisi enim similique vitae ipsam ipsum, eius dolorem placeat, possimus temporibus at beatae. Ratione, possimus perspiciatis laboriosam ipsam esse aut consectetur repellendus quidem natus sed asperiores nisi delectus. Iusto nam voluptates repellendus suscipit dolorem! Perspiciatis, aspernatur. Suscipit libero provident dolorum praesentium odio dolore est quibusdam obcaecati dolor deserunt quia reiciendis commodi, neque harum odit quam laborum, ducimus saepe! Placeat quisquam beatae nemo, laboriosam corrupti numquam quis quia sed ipsa at accusamus suscipit consequuntur odit eaque incidunt eveniet ullam commodi amet consequatur cupiditate reiciendis. Assumenda corrupti atque officia porro! Aspernatur a fugit, amet saepe aut accusantium, nostrum deserunt enim et reiciendis, molestiae voluptas. Voluptas nobis dignissimos enim in fuga dolorum commodi, rerum quibusdam reprehenderit, ut a magni rem aut optio nisi? Iste ab incidunt animi accusantium ut, delectus libero architecto? Quidem voluptates, sed consectetur omnis praesentium quas assumenda magnam. Sit tempora at dicta eos nobis ut cumque consectetur iusto aperiam corrupti quas architecto modi sapiente quia dolore aliquam ea vel, nisi consequatur sequi alias repudiandae quidem reprehenderit! Iure aspernatur, tempore quidem recusandae libero facilis laboriosam nam soluta enim labore provident dolorem illo cumque asperiores temporibus ea at consequuntur ullam impedit. Error aspernatur, officiis dolores quo qui ipsam cupiditate quae saepe, perferendis fuga, eum corporis? Similique quia deleniti consequuntur deserunt nulla dolores perspiciatis autem animi odio soluta et, maxime totam repellendus, facere nam nostrum assumenda, consectetur quam cum! Ipsa, quas.
+    </p>
+
+
+    <script>
+        function changeBG(color){
+            document.body.style.backgroundColor = color;//parameter for receiving the color from click event; & then passing it(color received in var color) to document style,
+            let txt = document.getElementsByClassName("text"); //now let txt is an array;
+            if(color == "#000000"){
+                for(let elm of txt){
+                    elm.style.color = "white";
+                }//all element of let txt will one by one passed into let elm,
+            }else{
+                for(let elm of txt){
+                    elm.style.color = "black";
+                }//all element of let txt will one by one passed into let elm,
+            }
+        }; 
+    </script>
+</body>
+</html>

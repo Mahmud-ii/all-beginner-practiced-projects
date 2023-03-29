@@ -1,0 +1,2 @@
+*sort the array alphabetically first without the/a/a articles;
+*re render them with articles in sorted; 

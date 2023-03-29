@@ -1,0 +1,3 @@
+onkeypress,
+1, play associated sound
+2, animate;

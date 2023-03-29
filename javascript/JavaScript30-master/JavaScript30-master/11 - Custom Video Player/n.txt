@@ -1,0 +1,8 @@
+*pause onclick screen, onclick pauseplay button; change button text;
+*drag volume range to update volume;
+*drag speed range to update speed;
+*onclick skip buttons skip video,
+
+
+*onclick progressbar progress, 
+*ondrag progressbar progress, 

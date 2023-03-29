@@ -1,0 +1,3 @@
+*use debounce function for the function;
+
+*when the images are half scrolled into view and not scrolled past the image, then we apply a class to them, which shows; else we remove the class

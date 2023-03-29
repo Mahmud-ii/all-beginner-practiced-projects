@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <title>Starbucks</title>
+</head>
+<body>
+    <div class="container">
+        
+        <header class="header">
+            <div class="logo">
+                <a href="#"><img src="img/logo.png" alt="logo" class="logo-img"></a>
+            </div>
+            <nav>
+                <div class="nav-toggle">
+                    <div class="toggle-btn"></div>
+                </div>
+                <ul class="nav-container">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">What's New</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="text-container">
+                <h1>It's not just Coffee It's <span class="highlighted-name">Starbucks</span></h1>
+                <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque reprehenderit tenetur nostrum fuga molestias accusamus pariatur provident vitae repellat sit modi veritatis, neque commodi magni? Lorem ipsum dolor amet elit. Assumenda, aliquid!</p>
+                <button class="btn learn-btn">Learn More</button>
+        </div>
+        <div class="highlighted-cup">
+                <img src="img/img1.png" alt="">
+        </div>
+        <div class="option-cup">
+            <img class="img1" src="img/thumb1.png" alt="thumb">
+            <img class="img2" src="img/thumb2.png" alt="thumb">
+            <img class="img3" src="img/thumb3.png" alt="thumb">
+        </div>
+        <div class="social">
+            <a href="#"><img src="img/facebook.png" alt=""></a>
+            <a href="#"><img src="img/twitter.png" alt=""></a>
+            <a href="#"><img src="img/instagram.png" alt=""></a>
+        </div>
+        <div class="circle"></div>
+    </div>
+    
+
+    <script>
+        const toggleBtn = document.querySelector('.nav-toggle')
+        const optionCupBtn = document.querySelector('.option-cup')
+        const highlightedCup = document.querySelector('.highlighted-cup')
+
+        toggleBtn.addEventListener('click', (e) => {
+            document.querySelector('.nav-container').classList.toggle('nav-container--clicked')
+            toggleBtn.classList.toggle('nav-toggle--clicked')
+        })
+
+        optionCupBtn.addEventListener('click', (e) => {
+            let value = e.target.classList.value
+            let circle = document.querySelector('.circle')
+            switch(value){
+                case "img1":
+                    highlightedCup.innerHTML = `<img src="img/${value}.png" alt="">`
+                    circle.style.background = "#017143"
+                    break;
+                case "img2":
+                    highlightedCup.innerHTML = `<img src="img/${value}.png" alt="">`
+                    circle.style.background = "#eb7495"
+                    break;
+                case "img3":
+                    highlightedCup.innerHTML = `<img src="img/${value}.png" alt="">`
+                    circle.style.background = "#d752b1"
+                    break;
+                default:
+                    return
+            }
+        })
+    </script>
+</body>
+</html>

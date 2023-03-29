@@ -1,0 +1,14 @@
+
+// two types of form validation in javascript, 
+
+1, server side validation; 
+server side verification occurs in server, & through server side language;
+
+
+
+2, client side validation;
+client side verification occurs through javascript;
+to validate information before sending it to server;
+
+
+*when user submit form or onsubmit it'll return a validateForm(); if function says true then form will submit, if false form won't submit;

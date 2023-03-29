@@ -1,0 +1,9 @@
+
+@import "./variable";
+@import "./header";
+
+.contact  {
+    @extend header;
+    background: coral;
+    width: 100% - 150%;
+}

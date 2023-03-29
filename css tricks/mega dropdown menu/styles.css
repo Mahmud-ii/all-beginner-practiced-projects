@@ -1,0 +1,104 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: rgb(225, 225, 225);
+}
+
+nav{
+    background: white;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, .10);
+    
+}
+
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+nav ul{
+    list-style: none;
+    position: relative;
+    text-align: left;
+}
+nav li{
+    display: inline-block;
+    /* font-weight: 600; */
+}
+nav a{
+    display: block;
+    text-decoration: none;
+    color: #444;
+    padding: .75rem 1.25rem;
+}
+nav li:hover{
+    background: #444;
+}
+nav li:hover a{
+    color: white;
+}
+
+
+.menu-sub{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: #444;
+    color: white;
+    display: none;
+    padding: 2rem;
+}
+nav li:hover .menu-sub{
+    display: block;
+}
+.menu-sub li{
+    display: block;
+}
+.menu-sub a{
+    padding: 0;
+    margin-bottom: .35rem;
+}
+.menu-sub a:hover{
+    text-decoration: underline;
+}
+
+.menu-category{
+    margin: 2.5rem 0 .5rem;
+}
+.menu-category:first-of-type{
+    margin-top: 0;
+}
+
+.menu-col-1,
+.menu-col-2,
+.menu-col-3,
+.menu-col-4{
+    float: left;
+}
+.menu-col-1{
+    width: 25%;
+}
+.menu-col-2{
+    width: 50%;
+}
+
+
+
+
+
+
+.my-menu{
+    left: 0;
+    position: absolute;
+    display: none;
+    padding: 2rem;
+    background: black;
+    color: white;
+    width: 100%;
+}
+nav li:hover .my-menu{
+    display: block;
+}

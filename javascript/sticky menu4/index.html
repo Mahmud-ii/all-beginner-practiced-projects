@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Navbar</title>
+    <style>
+        body{
+            margin: 0px;
+        }
+        #header{
+            text-align: center;
+        }
+        #logo{
+            width: 150px;
+            height: auto;
+        }
+        #menu-bar{
+            text-align: center;
+            background-color: rgb(64, 198, 202);
+        }
+        #menu-bar li{
+            display: inline-block;
+            padding: 15px 10px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        #container{
+            text-align: center;
+            padding: 50px 100px;
+        }
+        #about-img{
+            width: 100%;
+        }
+        .sticky{
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <img id="logo" src="https://logos-download.com/wp-content/uploads/2016/09/React_logo_logotype_emblem-700x626.png" alt="">
+    </div>
+    <nav id="menu-bar" >
+        <li>Home</li>
+        <li>About us</li>
+        <li>Our Team</li>
+        <li>Client</li>
+        <li>Contact Us</li>
+    </nav>
+    <div id="container">
+        <h1>About Us</h1>
+        <img id="about-img" src="https://3.bp.blogspot.com/-PdxgScCdvyk/V4P4WcY9xiI/AAAAAAAAAGk/_YW7SEA9VL8kycF-_a3HXeUrAEvLReOpQCLcB/w1200-h630-p-k-no-nu/IMG_8531.JPG" alt="">
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos expedita voluptatibus voluptas error officia? Dicta harum dolorum ea, porro quisquam sint aliquam voluptatum, unde at sunt quo nostrum odit asperiores. Libero id, pariatur ab nesciunt vero, exercitationem commodi fuga impedit facere dolorum nihil quo eligendi. Amet molestiae maxime minima non rem est, autem quasi odit eum facere saepe aliquam mollitia debitis hic, praesentium explicabo alias repellat porro aut veniam laboriosam beatae, dolore pariatur? Facilis voluptatem iste laboriosam! Neque, sapiente. Harum nisi illo atque nobis laudantium quia officiis ad odio delectus. Totam voluptate cum quas, doloribus earum rem corrupti consequatur vitae laudantium dignissimos! Rerum, quis fugit dignissimos vel similique a cum necessitatibus dicta nisi. Explicabo nesciunt facilis, sint, blanditiis voluptatum hic, culpa non eveniet possimus et magnam nobis assumenda excepturi debitis ratione quo quia adipisci minima! Iure illo doloremque sit magni sed tempora voluptatibus quis provident nam. Maiores repudiandae, quis similique et dolorem dolore deleniti blanditiis in eligendi, voluptatibus quae iste, laudantium pariatur aliquid repellat ipsa expedita esse consequatur ducimus quasi! Sequi velit, sapiente hic laudantium optio distinctio saepe illo laborum quaerat quisquam error non minus eaque impedit doloremque, itaque tenetur aliquam enim asperiores similique? Repudiandae corporis dignissimos eaque, et consectetur sapiente debitis molestiae molestias temporibus incidunt eum esse facere fugiat sed animi accusantium tempore dolorum provident laborum consequuntur asperiores modi. Voluptatem iusto dignissimos dolor. Harum reiciendis obcaecati nulla molestiae. Culpa asperiores totam reiciendis minus sint corporis nihil voluptatum hic. Id voluptatem voluptatum ex libero temporibus dolorem animi inventore, porro qui alias modi accusamus in, beatae officiis eos quaerat consequuntur dignissimos explicabo officia totam numquam aut. Ipsam at asperiores accusantium animi ab tempora pariatur neque similique id mollitia itaque provident maxime voluptatem doloremque ipsum, consectetur, nemo fugit odio? Laborum sed non distinctio blanditiis quis nihil ipsam, amet nemo quo. Incidunt harum odit, dolorum atque eum aut iusto quibusdam doloribus eligendi voluptatibus natus explicabo laborum placeat soluta quo maiores perspiciatis deleniti iste omnis. Dolorem, ad aspernatur quas harum vel sapiente repellat deleniti officia, porro, eveniet ipsa excepturi consectetur! Vero ipsum eligendi laborum dolore atque reprehenderit sequi expedita fugiat mollitia, labore, quis rerum enim aut praesentium asperiores tempora laboriosam? Alias laudantium a ab error dolore expedita voluptatem voluptates porro delectus! Impedit architecto libero magni, aut animi quibusdam accusantium consectetur exercitationem laboriosam nam laudantium veniam fugiat quas itaque assumenda omnis ipsa ratione suscipit. Sed temporibus voluptas perspiciatis labore a non porro quisquam laboriosam quibusdam quis eveniet illo mollitia cum dolore magni expedita laudantium dicta nisi, fugit quia tenetur, modi illum. Ut adipisci illum deserunt! Esse aliquid doloremque dolorem. Adipisci eligendi provident quod? Porro corrupti rerum architecto, quo dolore deleniti ipsa enim, explicabo nemo eum reprehenderit id, accusantium recusandae aperiam reiciendis ad aliquam a consectetur unde culpa harum tempora quisquam qui natus! Odio tempore nihil dignissimos suscipit error quibusdam. Quod dolores perspiciatis ea quo fugit nobis quam quae nam odit placeat? Atque libero molestiae aspernatur vero! Laudantium quae accusamus ad numquam, laborum illo eum quo ducimus id cumque eius earum? Culpa, aperiam. Laudantium, reiciendis obcaecati.
+        </p>
+
+    <script>
+        window.addEventListener("scroll", function(){
+            let navbar = document.getElementById("menu-bar");
+
+        if(window.pageYOffset >= 140){
+            navbar.classList.add("sticky");
+        //to detect if window scroll is 140px or not;if > 140 then sticky;
+        }else {
+            navbar.classList.remove("sticky")
+        }
+        });
+
+        //when the scroll is more then 140px then sticky, and when less then 140px remove sticky;
+    </script>
+    </div>
+</body>
+</html>
